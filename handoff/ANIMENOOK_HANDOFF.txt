@@ -1,0 +1,138 @@
+========================================================================
+ANIMENOOK - WORK PROGRESS / HANDOFF
+========================================================================
+App:        AnimeNook
+Subtitle:   100% Offline Random Anime Picker
+Company:    codex-zubair
+Package:    com.veranime.watchanime   (client-required package name)
+Repo:       git@github.com:codex-zubair/AnimeNook.git
+Platform:   Android only (Play Store)
+Version:    1.0.0+1
+Last updated: 2026-10-11
+
+========================================================================
+1. GOAL
+========================================================================
+Ship a very simple, easy-to-publish, fully offline "what should I watch?"
+random anime picker on the client-required package com.veranime.watchanime.
+Zero permissions, zero network, no ads, no analytics, stores no data — the
+lightest possible Play review.
+
+========================================================================
+2. STATUS
+========================================================================
+DONE:
+  [x] Flutter project scaffolded (org com.veranime, project watchanime,
+      android only) -> applicationId com.veranime.watchanime
+  [x] Pure-Dart engine: lib/core/{app_info,anime_title,nook_data,
+      nook_engine}.dart  (catalogue: 32 titles, 9 genres + All)
+  [x] State: state/nook_state.dart (ChangeNotifier + provider)
+  [x] UI: Pick (genre filter + random pick + spin again), Browse (full list
+      grouped by year), About (privacy link)
+  [x] NO permissions; INTERNET + ACCESS_NETWORK_STATE removed at build time
+  [x] Stores NO data at all (pure in-memory session state)
+  [x] flutter analyze: 0 issues
+  [x] flutter test: 16/16 passed
+  [x] Branding: pure-python bookmark+star icon generator; launcher icons,
+      adaptive icon, splash, Play 512 icon
+  [x] Store graphics: feature graphic 1024x500 + 5 phone screenshots 1080x1920
+  [x] Release signing keystore + build.gradle.kts release config + R8 rules
+  [x] Release AAB (47.5 MB) + APK (47.1 MB) built and signed, jar verified
+  [x] Keystore + credentials backed up to
+      /mnt/external_disk/ALL-APP-KEYS/AnimeNook/
+  [x] Privacy policy LIVE (HTTP 200):
+      https://codex-zubair.github.io/all_privacy_policy/animenook/
+  [x] Installed on device (Samsung SM-S908U) and smoke-tested: home, pick,
+      spin again, browse, about all verified
+  [x] Store listing + publishing guide written
+PENDING:
+  [ ] git init + push to github.com/codex-zubair/AnimeNook
+  [ ] Play Console: create app, upload AAB, store listing, data safety
+
+========================================================================
+3. KEY FACTS / DECISIONS
+========================================================================
+- Name: AnimeNook (store search showed no exact match; a formal trademark
+  check is still advisable before publishing).
+- Package: com.veranime.watchanime (client requirement; permanent).
+- Content: 100% original & factual. NO verbatim quotes/lyrics/media.
+- No permissions. No INTERNET. No ads, no analytics. NO stored data.
+- Scope v1.0: single-purpose random picker, fully offline.
+
+========================================================================
+4. PROJECT LAYOUT
+========================================================================
+lib/
+  core/
+    app_info.dart      brand/links constants (incl. privacy URL)
+    anime_title.dart   Genre + AnimeTitle models
+    nook_data.dart     the 32-title catalogue + genres
+    nook_engine.dart   genre filter + random pick logic
+  state/
+    nook_state.dart    ChangeNotifier
+  screens/
+    root_shell.dart, picker_screen.dart, browse_screen.dart, about_screen.dart
+  widgets/  brand.dart
+  theme/    app_theme.dart
+test/       nook_engine_test, widget_test
+tool/       gen_icons.py, make_graphics.py
+privacy-policy/index.html
+store_assets/  PLAY_STORE_LISTING.txt, PUBLISHING_GUIDE.txt,
+               graphics/, screenshots/
+
+========================================================================
+5. COMMANDS
+========================================================================
+Setup:   cd /home/codex-zubair/Desktop/APPS/animenook && flutter pub get
+Quality: flutter analyze && flutter test
+Build:   flutter build appbundle --release
+         flutter build apk --release
+Assets:  python3 tool/gen_icons.py
+         dart run flutter_launcher_icons
+         dart run flutter_native_splash:create
+         python3 tool/make_graphics.py
+Git:     git remote add origin git@github.com:codex-zubair/AnimeNook.git
+         git push -u origin main
+
+========================================================================
+6. SIGNING
+========================================================================
+Keystore: android/animenook-release.jks  (git-ignored)
+Alias:    animenook
+Pass:     animenook2026key   (in android/key.properties, git-ignored)
+DN:       CN=codex-zubair, OU=Mobile, O=codex-zubair, L=City, ST=State, C=US
+SHA1:     4C:F6:FA:96:C2:3A:49:5B:C8:93:DC:FD:A4:8E:89:7B:D1:D8:51:FA
+SHA256:   78:F7:84:91:C4:D0:43:B0:F6:9E:A9:15:96:C2:5D:17:BC:09:38:3E:5C:
+          05:18:96:20:50:44:AC:11:0F:CF:8D
+
+========================================================================
+7. PRIVACY POLICY
+========================================================================
+File:  privacy-policy/index.html
+URL:   https://codex-zubair.github.io/all_privacy_policy/animenook/ (LIVE 200)
+AppInfo.privacyPolicyUrl in lib/core/app_info.dart is set to this URL.
+
+========================================================================
+8. VERIFIED WORKING (this session)
+========================================================================
+- flutter analyze: No issues found
+- flutter test: 16/16 passed
+- flutter build appbundle --release: SUCCESS (47.5 MB), jar verified
+- flutter build apk --release: SUCCESS (47.1 MB)
+- Device smoke test: install -> pick -> spin again -> browse -> about.
+- APK permissions: only the internal DYNAMIC_RECEIVER permission; no
+  INTERNET, no ACCESS_NETWORK_STATE.
+
+========================================================================
+9. CHANGELOG
+========================================================================
+2026-10-11  Initial build.
+  - Scaffolded AnimeNook on com.veranime.watchanime.
+  - Wrote engine, 32-title catalogue, state, UI (Pick/Browse/About).
+  - 16 tests passing; analyze clean.
+  - Branding + store graphics generated.
+  - Release AAB + APK built and signed; keystore backed up.
+  - Privacy policy published (live 200).
+  - Installed and smoke-tested on device.
+  - Store listing, publishing guide and this handoff written.
+========================================================================

@@ -1,0 +1,292 @@
+import 'anime_title.dart';
+
+/// The complete offline catalogue for AnimeNook.
+///
+/// Every entry is factual (title, year of first airing, animation studio,
+/// genres) with a short original blurb. Nothing here is copyrighted text or
+/// media — there are no quotes, synopses or artwork.
+class NookData {
+  const NookData._();
+
+  static const String allGenres = 'all';
+
+  static const List<Genre> genres = <Genre>[
+    Genre(id: 'all', name: 'All', emoji: '🎲'),
+    Genre(id: 'action', name: 'Action', emoji: '⚔️'),
+    Genre(id: 'adventure', name: 'Adventure', emoji: '🗺️'),
+    Genre(id: 'comedy', name: 'Comedy', emoji: '😂'),
+    Genre(id: 'fantasy', name: 'Fantasy', emoji: '🐉'),
+    Genre(id: 'romance', name: 'Romance', emoji: '💗'),
+    Genre(id: 'scifi', name: 'Sci-Fi', emoji: '🚀'),
+    Genre(id: 'slice', name: 'Slice of Life', emoji: '🍵'),
+    Genre(id: 'sports', name: 'Sports', emoji: '🏐'),
+    Genre(id: 'mystery', name: 'Mystery', emoji: '🔍'),
+  ];
+
+  static const List<AnimeTitle> titles = <AnimeTitle>[
+    AnimeTitle(
+      id: 'a01',
+      title: 'Dragon Ball',
+      year: 1986,
+      studio: 'Toei Animation',
+      genres: <String>['action', 'adventure', 'comedy'],
+      blurb: 'A martial arts adventure that helped define the modern shonen genre.',
+    ),
+    AnimeTitle(
+      id: 'a02',
+      title: 'Sailor Moon',
+      year: 1992,
+      studio: 'Toei Animation',
+      genres: <String>['action', 'fantasy', 'romance'],
+      blurb: 'A landmark magical-girl series that popularised the genre worldwide.',
+    ),
+    AnimeTitle(
+      id: 'a03',
+      title: 'Neon Genesis Evangelion',
+      year: 1995,
+      studio: 'Gainax',
+      genres: <String>['action', 'scifi', 'mystery'],
+      blurb: 'A psychological mecha drama known for its complex characters.',
+    ),
+    AnimeTitle(
+      id: 'a04',
+      title: 'Cowboy Bebop',
+      year: 1998,
+      studio: 'Sunrise',
+      genres: <String>['action', 'scifi', 'adventure'],
+      blurb: 'A jazz-scored space-western following a crew of bounty hunters.',
+    ),
+    AnimeTitle(
+      id: 'a05',
+      title: 'One Piece',
+      year: 1999,
+      studio: 'Toei Animation',
+      genres: <String>['action', 'adventure', 'comedy'],
+      blurb: 'A long-running pirate adventure on the high seas of the Grand Line.',
+    ),
+    AnimeTitle(
+      id: 'a06',
+      title: 'Hunter x Hunter',
+      year: 1999,
+      studio: 'Nippon Animation',
+      genres: <String>['action', 'adventure', 'fantasy'],
+      blurb: 'A young hero sets out to become a Hunter and find his father.',
+    ),
+    AnimeTitle(
+      id: 'a07',
+      title: 'Spirited Away',
+      year: 2001,
+      studio: 'Studio Ghibli',
+      genres: <String>['fantasy', 'adventure'],
+      blurb: 'A girl navigates a spirit world of bathhouses and strange creatures.',
+    ),
+    AnimeTitle(
+      id: 'a08',
+      title: 'Naruto',
+      year: 2002,
+      studio: 'Pierrot',
+      genres: <String>['action', 'adventure'],
+      blurb: 'A ninja-in-training dreams of leading his village.',
+    ),
+    AnimeTitle(
+      id: 'a09',
+      title: 'Fullmetal Alchemist: Brotherhood',
+      year: 2009,
+      studio: 'Bones',
+      genres: <String>['action', 'adventure', 'fantasy'],
+      blurb: 'Two brothers search for a way to restore what they lost to alchemy.',
+    ),
+    AnimeTitle(
+      id: 'a10',
+      title: 'Steins;Gate',
+      year: 2011,
+      studio: 'White Fox',
+      genres: <String>['scifi', 'mystery'],
+      blurb: 'A time-travel story about a self-styled mad scientist.',
+    ),
+    AnimeTitle(
+      id: 'a11',
+      title: 'Attack on Titan',
+      year: 2013,
+      studio: 'Wit Studio',
+      genres: <String>['action', 'fantasy', 'mystery'],
+      blurb: 'Humanity fights for survival against giant humanoid Titans.',
+    ),
+    AnimeTitle(
+      id: 'a12',
+      title: 'Haikyuu!!',
+      year: 2014,
+      studio: 'Production I.G',
+      genres: <String>['sports', 'comedy'],
+      blurb: 'A short boy chases volleyball glory with his high-school team.',
+    ),
+    AnimeTitle(
+      id: 'a13',
+      title: 'One Punch Man',
+      year: 2015,
+      studio: 'Madhouse',
+      genres: <String>['action', 'comedy'],
+      blurb: 'A hero who wins every fight in a single punch searches for a challenge.',
+    ),
+    AnimeTitle(
+      id: 'a14',
+      title: 'Your Name',
+      year: 2016,
+      studio: 'CoMix Wave Films',
+      genres: <String>['romance', 'fantasy', 'slice'],
+      blurb: 'Two teenagers mysteriously begin swapping bodies across distance.',
+    ),
+    AnimeTitle(
+      id: 'a15',
+      title: 'My Hero Academia',
+      year: 2016,
+      studio: 'Bones',
+      genres: <String>['action', 'adventure'],
+      blurb: 'A boy born without powers trains to become a professional hero.',
+    ),
+    AnimeTitle(
+      id: 'a16',
+      title: 'A Silent Voice',
+      year: 2016,
+      studio: 'Kyoto Animation',
+      genres: <String>['romance', 'slice'],
+      blurb: 'A former bully tries to make amends with a deaf classmate.',
+    ),
+    AnimeTitle(
+      id: 'a17',
+      title: 'Violet Evergarden',
+      year: 2018,
+      studio: 'Kyoto Animation',
+      genres: <String>['slice', 'fantasy', 'romance'],
+      blurb: 'A former soldier learns to understand emotions by writing letters.',
+    ),
+    AnimeTitle(
+      id: 'a18',
+      title: 'Demon Slayer: Kimetsu no Yaiba',
+      year: 2019,
+      studio: 'ufotable',
+      genres: <String>['action', 'fantasy'],
+      blurb: 'A kind-hearted boy hunts demons to save his transformed sister.',
+    ),
+    AnimeTitle(
+      id: 'a19',
+      title: 'Dr. Stone',
+      year: 2019,
+      studio: 'TMS Entertainment',
+      genres: <String>['scifi', 'adventure'],
+      blurb: 'A science prodigy rebuilds civilisation after humanity is petrified.',
+    ),
+    AnimeTitle(
+      id: 'a20',
+      title: 'Fruits Basket',
+      year: 2019,
+      studio: 'TMS Entertainment',
+      genres: <String>['romance', 'slice', 'fantasy'],
+      blurb: 'A girl lives with a family hiding a magical secret.',
+    ),
+    AnimeTitle(
+      id: 'a21',
+      title: 'Jujutsu Kaisen',
+      year: 2020,
+      studio: 'MAPPA',
+      genres: <String>['action', 'fantasy', 'mystery'],
+      blurb: 'A student joins a secret school to fight cursed spirits.',
+    ),
+    AnimeTitle(
+      id: 'a22',
+      title: 'Horimiya',
+      year: 2021,
+      studio: 'CloverWorks',
+      genres: <String>['romance', 'comedy', 'slice'],
+      blurb: 'Two classmates discover each other\'s hidden sides outside school.',
+    ),
+    AnimeTitle(
+      id: 'a23',
+      title: 'Chainsaw Man',
+      year: 2022,
+      studio: 'MAPPA',
+      genres: <String>['action', 'fantasy'],
+      blurb: 'A young man merges with a chainsaw devil to hunt demons.',
+    ),
+    AnimeTitle(
+      id: 'a24',
+      title: 'Spy x Family',
+      year: 2022,
+      studio: 'Wit Studio & CloverWorks',
+      genres: <String>['comedy', 'action', 'slice'],
+      blurb: 'A spy, an assassin and a telepath form a fake family.',
+    ),
+    AnimeTitle(
+      id: 'a25',
+      title: 'Blue Lock',
+      year: 2022,
+      studio: '8bit',
+      genres: <String>['sports', 'action'],
+      blurb: 'Hundreds of strikers compete to become Japan\'s best.',
+    ),
+    AnimeTitle(
+      id: 'a26',
+      title: 'Frieren: Beyond Journey\'s End',
+      year: 2023,
+      studio: 'Madhouse',
+      genres: <String>['fantasy', 'adventure', 'slice'],
+      blurb: 'An elf mage reflects on time and friendship long after the quest ends.',
+    ),
+    AnimeTitle(
+      id: 'a27',
+      title: 'Oshi no Ko',
+      year: 2023,
+      studio: 'Doga Kobo',
+      genres: <String>['mystery', 'slice'],
+      blurb: 'A drama about the glittering and cutthroat world of idols.',
+    ),
+    AnimeTitle(
+      id: 'a28',
+      title: 'Bocchi the Rock!',
+      year: 2022,
+      studio: 'CloverWorks',
+      genres: <String>['comedy', 'slice'],
+      blurb: 'An anxious loner finds her place in a high-school rock band.',
+    ),
+    AnimeTitle(
+      id: 'a29',
+      title: 'Ghost in the Shell',
+      year: 1995,
+      studio: 'Production I.G',
+      genres: <String>['scifi', 'action', 'mystery'],
+      blurb: 'A cyborg officer questions identity in a networked future.',
+    ),
+    AnimeTitle(
+      id: 'a30',
+      title: 'Princess Mononoke',
+      year: 1997,
+      studio: 'Studio Ghibli',
+      genres: <String>['fantasy', 'adventure', 'action'],
+      blurb: 'A prince is caught between forest gods and an industrial town.',
+    ),
+    AnimeTitle(
+      id: 'a31',
+      title: 'Death Note',
+      year: 2006,
+      studio: 'Madhouse',
+      genres: <String>['mystery', 'action'],
+      blurb: 'A gifted student gains a notebook with lethal power.',
+    ),
+    AnimeTitle(
+      id: 'a32',
+      title: 'Sword Art Online',
+      year: 2012,
+      studio: 'A-1 Pictures',
+      genres: <String>['action', 'adventure', 'romance'],
+      blurb: 'Players are trapped inside a virtual-reality game.',
+    ),
+  ];
+
+  /// Titles that belong to [genreId]; [allGenres] returns everything.
+  static List<AnimeTitle> byGenre(String genreId) {
+    if (genreId == allGenres) return List<AnimeTitle>.of(titles);
+    return titles
+        .where((AnimeTitle t) => t.genres.contains(genreId))
+        .toList(growable: false);
+  }
+}

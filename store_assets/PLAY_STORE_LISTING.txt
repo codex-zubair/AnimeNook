@@ -1,0 +1,169 @@
+========================================================================
+ANIMENOOK - GOOGLE PLAY STORE LISTING CONTENT
+========================================================================
+Copy/paste these values directly into the Play Console.
+Character limits are noted; all values are within limits.
+
+========================================================================
+APP IDENTITY
+========================================================================
+App name (max 30):            AnimeNook
+                              (9 characters)
+
+Package name (permanent):     com.veranime.watchanime
+
+Default language:             English (United States) - en-US
+
+App category:                 Entertainment  (or "Tools")
+Tags (max 5):                 Anime, Random picker, Discover, Offline, Manga
+
+Contact email:                iam.nmzar@gmail.com
+Contact website (optional):   https://github.com/codex-zubair
+Contact phone (optional):     (leave blank)
+
+Privacy policy URL:           https://codex-zubair.github.io/all_privacy_policy/animenook/
+
+========================================================================
+STORE LISTING TEXT
+========================================================================
+
+--- Short description (max 80) ---
+Can't decide what to watch? Let AnimeNook pick an anime for you. Offline.
+(72 characters)
+
+--- Full description (max 4000) ---
+AnimeNook answers the hardest question of the day: "What should I watch?"
+
+Tap one button and AnimeNook picks a random anime for you from a curated,
+offline catalogue. Filter by genre, spin again until something catches your
+eye, or browse the whole list. No internet, no accounts, no ads — just a
+quick way to decide.
+
+PERFECT FOR
+- "I don't know what to watch tonight."
+- Discovering classics you may have missed.
+- Settling a group decision with a fair random pick.
+- Picking a genre to match your mood.
+
+HOW IT WORKS
+- Choose a genre (or leave it on All).
+- Tap "Pick for me" to get a random title.
+- See the year, the animation studio, the genres and a short description.
+- Tap "Spin again" for a different suggestion.
+- Prefer to look around? The Browse tab lists the whole catalogue.
+
+FEATURES
+- A curated catalogue of 32 well-known anime titles.
+- Filter by Action, Adventure, Comedy, Fantasy, Romance, Sci-Fi, Slice of
+  Life, Sports and Mystery.
+- Clean, fast, one-tap interface.
+- Full catalogue view with year, studio and genres.
+- Works completely offline.
+
+PRIVATE BY DESIGN
+- No internet permission at all — the app cannot go online.
+- Zero Android permissions requested.
+- No ads, no analytics, no trackers.
+- The catalogue is bundled inside the app.
+- The app stores no data at all — no history, no profile, nothing.
+
+100% ORIGINAL CONTENT
+Every entry is factual (title, year, studio, genres) with a short original
+description written by the developer. AnimeNook contains no video, audio,
+manga or other copyrighted media, and no verbatim quotations, dialogue or
+lyrics.
+
+Open source
+AnimeNook's source code is public at
+https://github.com/codex-zubair/AnimeNook
+
+Built by codex-zubair.
+
+========================================================================
+DATA SAFETY FORM (Play Console -> App content -> Data safety)
+========================================================================
+Answer exactly as follows.
+
+Does your app collect or share any of the required user data types?
+  -> No
+
+Is all of the user data collected by your app encrypted in transit?
+  -> N/A (no data collected) - if forced, answer "No".
+
+Do you provide a way for users to request that their data is deleted?
+  -> No (the app stores no data at all).
+
+Data types: leave every category unchecked.
+
+Additional:
+  - "Is your app's data collection practice covered by a privacy policy?"
+    -> Yes, provide the privacy policy URL above.
+  - "Has your app been independently validated?" -> No.
+
+Result summary shown to users: "No data collected" and "No data shared".
+This matches the app: no permissions, no INTERNET permission, no storage.
+
+========================================================================
+APP CONTENT QUESTIONNAIRES
+========================================================================
+
+1. Privacy policy   -> Provide the URL above.
+2. Ads              -> No, the app does not contain ads.
+3. App access       -> All functionality is available without restrictions.
+4. Content rating   -> Category "Utility, Productivity, Communication, or
+                       Other"; answer "No" to every sensitive question.
+                       Expected: Everyone / 3+.
+5. Target audience  -> 13+ (or 18+). Do NOT select under 13.
+6. News / COVID / Government / Financial / Health -> No.
+7. Data safety      -> See the Data Safety section above.
+
+========================================================================
+PERMISSIONS DECLARATION (Play Console -> App content -> sensitive perms)
+========================================================================
+AnimeNook declares NO Android permissions. It explicitly REMOVES the network
+permissions so the app cannot go online:
+  - android.permission.INTERNET            (tools:node="remove")
+  - android.permission.ACCESS_NETWORK_STATE (tools:node="remove")
+
+There is no location, camera, microphone, storage, contacts, phone, SMS or
+AD_ID permission. The Play Console will not prompt for permission
+declarations, and the app qualifies for the "No data collected" label.
+
+========================================================================
+STORE ASSETS (files provided)
+========================================================================
+App icon (512 x 512 PNG, 32-bit):
+  assets/images/play_icon_512.png
+
+Feature graphic (1024 x 500 PNG):
+  store_assets/graphics/feature_graphic_1024x500.png
+
+Phone screenshots (1080 x 1920 PNG, minimum 2 required, 8 max):
+  store_assets/screenshots/01_home.png
+  store_assets/screenshots/02_your_pick.png
+  store_assets/screenshots/03_genre_filter.png
+  store_assets/screenshots/04_browse.png
+  store_assets/screenshots/05_about_privacy.png
+
+Optional (not required): tablet screenshots.
+
+========================================================================
+RELEASE NOTES (for "What's new" - first release)
+========================================================================
+First release.
+
+- Random anime picker with a curated 32-title catalogue.
+- Filter by 9 genres; spin again for a new suggestion.
+- Browse the full catalogue with year, studio and genres.
+- No permissions, no ads, no internet, no data stored.
+
+========================================================================
+VERSIONING (for future updates)
+========================================================================
+Current: versionName 1.0.0, versionCode 1.
+To ship an update, edit pubspec.yaml:
+  version: 1.0.1+2        # name 1.0.1, code 2 (code must always increase)
+Then rebuild:
+  flutter build appbundle --release
+and upload the new AAB to the same app in Play Console.
+========================================================================

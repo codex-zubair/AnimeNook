@@ -1,0 +1,137 @@
+========================================================================
+ANIMENOOK - COMPLETE GOOGLE PLAY PUBLISHING GUIDE
+========================================================================
+For:      codex-zubair
+App:      AnimeNook (com.veranime.watchanime)
+Version:  1.0.0 (versionCode 1)
+Built:    2026-10-11
+
+This is the end-to-end checklist. Sections marked [YOU] need account-level
+actions only you can do. Everything else is ready.
+
+========================================================================
+0. WHAT IS ALREADY DONE FOR YOU
+========================================================================
+[x] AAB built and signed: build/app/outputs/bundle/release/app-release.aab
+    (47.5 MB)  [jar verified]
+[x] APK built and signed: build/app/outputs/flutter-apk/app-release.apk
+    (47.1 MB)
+[x] Keystore + passwords backed up:
+      /mnt/external_disk/ALL-APP-KEYS/AnimeNook/
+[x] flutter analyze: 0 issues
+[x] flutter test: 16/16 passed
+[x] NO Android permissions; INTERNET + ACCESS_NETWORK_STATE removed
+[x] Store copy: store_assets/PLAY_STORE_LISTING.txt
+[x] App icon 512: assets/images/play_icon_512.png
+[x] Feature graphic: store_assets/graphics/feature_graphic_1024x500.png
+[x] 5 phone screenshots: store_assets/screenshots/*.png
+[x] Privacy policy LIVE (HTTP 200):
+      https://codex-zubair.github.io/all_privacy_policy/animenook/
+[x] Installed and smoke-tested on a real device
+[x] Public GitHub repo: https://github.com/codex-zubair/AnimeNook
+
+========================================================================
+1. PREREQUISITES [YOU]
+========================================================================
+Google Play Developer account (https://play.google.com/console), one-time $25.
+Register/confirm the developer name "codex-zubair" (PERSONAL) or your company
+(ORGANIZATION). Verify iam.nmzar@gmail.com.
+
+========================================================================
+2. PRIVACY POLICY (already live) [DONE]
+========================================================================
+https://codex-zubair.github.io/all_privacy_policy/animenook/
+
+========================================================================
+3. CREATE THE APP IN PLAY CONSOLE [YOU]
+========================================================================
+App name: AnimeNook | Default language: English (US) | App (not game) | Free.
+Tick both declarations, then Create app.
+
+========================================================================
+4. STORE LISTING [30 min]
+========================================================================
+Fill from store_assets/PLAY_STORE_LISTING.txt:
+  - Name, short description, full description
+  - Icon: assets/images/play_icon_512.png (512x512)
+  - Feature graphic: store_assets/graphics/feature_graphic_1024x500.png
+  - Phone screenshots: all 5 from store_assets/screenshots/
+  - Category: Entertainment (or Tools)
+Save.
+
+========================================================================
+5. APP CONTENT FORMS [20 min]
+========================================================================
+Privacy policy -> URL from step 2
+Ads -> No
+App access -> available without restrictions
+Content rating -> "Utility..."; answer No to everything (expect Everyone/3+)
+Target audience -> 13+ (or 18+); not designed for children
+News / COVID / Government / Financial / Health -> No
+Data safety -> see step 6
+
+========================================================================
+6. DATA SAFETY FORM
+========================================================================
+"Does your app collect or share any user data?" -> NO
+Data types: leave ALL unchecked.
+If forced on "encrypted in transit": choose No (nothing is collected).
+Save -> users see "No data collected".
+
+========================================================================
+7. PEOPLE-RELEASE SIGNING (Play App Signing)
+========================================================================
+Choose "Continue" when offered. Upload the AAB signed with the provided
+upload key (ALL-APP-KEYS/AnimeNook/upload-keystore.jks). Google stores the
+real app signing key thereafter. KEEP THE UPLOAD KEY SAFE.
+
+========================================================================
+8. CREATE THE RELEASE
+========================================================================
+flutter build appbundle --release
+Play Console -> Release -> Testing -> Internal testing -> Create new release
+-> upload app-release.aab -> release notes (from listing txt) -> add tester
+email -> Review -> Start rollout to Internal testing.
+
+========================================================================
+9. PROMOTE TO PRODUCTION
+========================================================================
+Release -> Production -> Create new release -> reuse the 1.0.0 bundle ->
+rollout 100% -> submit for review. First-app review: 3-7 days typically.
+
+========================================================================
+10. AFTER PUBLICATION
+========================================================================
+Store link:
+  https://play.google.com/store/apps/details?id=com.veranime.watchanime
+To update: bump version in pubspec.yaml, rebuild the AAB, upload again.
+NEVER change applicationId (com.veranime.watchanime) - it is permanent.
+
+========================================================================
+11. BUILD ON ANY MACHINE
+========================================================================
+Copy upload-keystore.jks + key.properties from ALL-APP-KEYS/AnimeNook/ into
+android/ (rename the jks to animenook-release.jks or fix storeFile=).
+Then: flutter pub get && flutter build appbundle --release
+
+========================================================================
+12. MANIFEST SUMMARY
+========================================================================
+  - NO <uses-permission> entries (network permissions removed).
+  - Single launcher activity (.MainActivity).
+  - allowBackup=false, usesCleartextTraffic=false.
+  - Standard Flutter embedding meta-data + PROCESS_TEXT/VIEW queries.
+
+========================================================================
+13. QUICK CHECKLIST
+========================================================================
+[x] Privacy policy live (200)
+[ ] Register/confirm Play developer account
+[ ] Create app "AnimeNook"
+[ ] Fill store listing (text + 512 icon + feature graphic + screenshots)
+[ ] Complete ALL App content forms
+[ ] Enroll in Play App Signing (upload key = provided keystore)
+[ ] Internal testing release with the AAB
+[ ] Promote to Production
+[ ] Wait for review; confirm listing live
+========================================================================
